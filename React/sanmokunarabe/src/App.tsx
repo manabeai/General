@@ -5,21 +5,23 @@ type SquareProps = {
   onSquareClick: () => void;
 };
 
-const Square: React.FC<SquareProps> = ({ value, onSquareClick }) => {
+type Squares = Array<string | null>;
+
+export const Square: React.FC<SquareProps> = ({ value, onSquareClick }) => {
   return <button className="square" onClick={onSquareClick}>{value}</button>;
 };
 
 const Board = () => {
-  const [squares, setSquares] = useState<Array<string | null>>(Array(9).fill(null));
+  const [squares, setSquares] = useState<Squares>(Array(9).fill(null));
 
   const handleClick = (i: number) => {
-    const nextSquares = squares.slice();
+    const nextSquares: Squares = squares.slice();
     nextSquares[i] = "X";
     setSquares(nextSquares);
   }
 
   return (
-    <>
+    <div className="board" data-testid="board">
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -35,7 +37,7 @@ const Board = () => {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
-    </>
+    </div>
   );
 }
 
