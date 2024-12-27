@@ -1,0 +1,8 @@
+<h1>Tweets</h1>
+<% @tweets.each do |tweet| %>
+  <div>
+    <p><%= tweet.content %></p>
+    <p>Created at: <%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+    <p><%= tweet.user.first_name %></p>
+  </div>
+<% end %>
