@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.all.includes(:user)
+    @tweets = Tweet.includes(:user).decorate
   end
 end

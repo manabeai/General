@@ -3,6 +3,6 @@
   <div>
     <p><%= tweet.content %></p>
     <p>Created at: <%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
-    <p><%= tweet.user.first_name %></p>
+    <p><%= tweet.user.fullname %></p>
   </div>
 <% end %>
