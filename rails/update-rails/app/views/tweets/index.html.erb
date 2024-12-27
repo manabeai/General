@@ -1,8 +1,10 @@
 <h1>Tweets</h1>
 <% @tweets.each do |tweet| %>
   <div>
+    <a href="#" class="m-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
     <p><%= tweet.content %></p>
     <p>Created at: <%= tweet.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
     <p><%= tweet.user.fullname %></p>
+    </a>
   </div>
 <% end %>
