@@ -1,0 +1,3 @@
+[submodule "go/real-world-http"]
+	path = go/real-world-http
+	url = https://github.com/oreilly-japan/real-world-http.git
